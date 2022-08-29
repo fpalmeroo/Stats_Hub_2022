@@ -51,8 +51,8 @@ font_add(family = "Bahnschrift", regular = "C:\\Windows\\Fonts\\bahnschrift.ttf"
 ## 03. Stickers
 
 ```{r}
-#| echo: false
-#| warning: false
+#| echo: false #| echo: false # To hide code
+#| warning: false # To avoid see warnings
 #| message: false
 
 statshub <- sticker(
@@ -140,35 +140,45 @@ tidymonday <- sticker(
 
 ```{r}
 #| echo: false
-#| warning: false
+#| warning: false 
 #| message: false
+
+palette <- list('font' = '#372549',
+               ' border' = '#372549',
+                'note' = 'black',
+                'background' = '#d8f3dc')
+
+font_color <- '#372549'
+border_color <- '#372549'
+note_color <- 'black'
+background_color <- '#d8f3dc'
 
 statasaurus <- sticker(
   # Title
   package = "statasaurus",
   # Title attributes
   p_family = "Bahnschrift",
-  p_color = '#c9184a',
+  p_color = palette$font, # The color of the title letters
   p_size = 20,
   p_y = 0.55,
   # Image
   subplot = dinosaur,
   # Image attributes
-  s_width = 0.95,
+  s_width = 0.95, 
   s_height = 0.95,
   s_x = 1,
   s_y = 1.2,
   # Hexagon attributes
-  h_fill = '#d6e3f8',
-  h_color = '#5e548e',
-  h_size = 1.5,
+  h_fill = background_color, # change the color of the background
+  h_color = border_color, 
+  h_size = 2, # Change the size of border lines
   # Add a link
-  url = "FALL 2022",
+  url = "#TidyMondays",
   u_size = 5,
-  u_color = '#3d2645',
+  u_color = note_color, # the color of the url
   # Add spotlight
-  spotlight = F,
-  # Spotlight attributes
+  spotlight = F, # True= put bright in the image
+  # Spotlight attributes (to change where/the position of brightness)
   l_y = 1,
   l_x = 1,
   l_width = 3,
@@ -180,7 +190,7 @@ statasaurus <- sticker(
   white_around_sticker = FALSE
   ) 
 
-
+statasaurus
 
 ```
 
